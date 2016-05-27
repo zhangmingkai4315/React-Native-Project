@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flextest</title>
+	<style type="text/css">
+	.flexContainer{
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		/*flex-direction:column;*/
+		/*flex-direction:row-reverse;*/
+		/*flex-wrap: nowrap;*/
+		/*justify-content: center;*/
+		/*justify-content: space-between;*/
+		/*justify-content: space-around;*/
+		align-items: flex-end;
+	}
+	.item6{
+		flex:1
+	}
+	.block{
+		height: 200px;
+		width: 200px;
+		background-color: orange;
+		margin-left: 10px;
+		margin-top:10px;
+	}
+	.block p{
+		text-align: center;
+	    font-size: 60px;
+	}
+	</style>
+</head>
+
+<body>
+<div>
+<span class="flexContainer">
+	<div class="block item1">
+		<p>1</p>
+	</div>
+	<div class="block item2">
+		<p>2</p>
+	</div>
+	<div class="block item3">
+		<p>3</p>
+	</div>
+		<div class="block item4">
+		<p>4</p>
+	</div>
+	<div class="block item5">
+		<p>5</p>
+	</div>
+	<div class="block item6">
+		<p>6</p>
+	</div>
+
+</span>
+</div>
+</body>
+</html>
