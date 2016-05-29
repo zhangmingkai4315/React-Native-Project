@@ -35,7 +35,7 @@ class AwesomeProject extends Component {
         dataSource:this.state.dataSource.cloneWithRows(responseData.movies),
         loaded:true,
       });
-    }).done();
+    }).done(); //确保所有的异常得到处理
   }
   componentDidMount() {
     this.fetchData()

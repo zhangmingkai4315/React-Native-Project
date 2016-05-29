@@ -1,0 +1,76 @@
+<!-- 定义一个flex布局来显示栅格模型 .可以根据屏幕的尺寸动态调整-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flex Grid</title>
+    <style media="screen">
+      .grid{
+        border: solid 1px #e7e7e7e;
+      }
+      .grid_row{
+        /*使用flex布局*/
+        display: flex;
+        flex-direction: column;
+      }
+      .grid_item{
+        /*等宽分布*/
+        flex: 1;
+        padding: 12px;
+        border: solid 1px #e7e7e7;
+      }
+      @media all and (min-width:480px){
+        .grid_row--sm{
+          flex-direction: row;
+        }
+      }
+      @media all and (min-width:720px){
+        .grid_row--md{
+          flex-direction: row;
+        }
+      }
+      @media all and (min-width:960px){
+        .grid_row--lg{
+          flex-direction: row;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+        <div class="grid_row grid_row--sm">
+          <div class="grid_item">
+            1
+          </div>
+          <div class="grid_item">
+            2
+          </div>
+        </div>
+        <div class="grid_row grid_row--md">
+          <div class="grid_item">
+            1
+          </div>
+          <div class="grid_item">
+            2
+          </div>
+          <div class="grid_item">
+            3
+          </div>
+        </div>
+        <div class="grid_row grid_row--lg">
+          <div class="grid_item">
+            1
+          </div>
+          <div class="grid_item">
+            2
+          </div>
+          <div class="grid_item">
+            3
+          </div>
+          <div class="grid_item">
+            4
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
