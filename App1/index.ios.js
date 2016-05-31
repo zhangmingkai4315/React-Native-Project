@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import Header from './src/Header';
 import List from './src/List';
 import ImportantNews from './src/ImportantNews';
+import Search from './src/Search';
 import {
   AppRegistry,
   StyleSheet,
@@ -18,13 +19,13 @@ import {
   NavigatorIOS
 } from 'react-native';
 
-
-
-
 class App1 extends Component {
   render() {
     return (
       <ScrollView style={styles.flex}>
+
+        <Search></Search>
+
         <View style={styles.container}>
           <View style={[styles.item,styles.center]}>
             <Text style={styles.font}>酒店</Text>
@@ -64,7 +65,6 @@ class App1 extends Component {
 
 const styles = StyleSheet.create({
   container:{
-    marginTop:80,
     marginLeft:5,
     marginRight:5,
     height:84,
