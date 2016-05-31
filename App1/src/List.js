@@ -2,17 +2,44 @@ import React, { Component } from 'react'
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
-const List = React.createClass({
+
+class Detail extends Component {
+
+  render () {
+    return (
+      <ScrollView >
+        <Text>一个详细的页面</Text>
+      </ScrollView>
+    )
+  }
+}
+
+class List extends Component {
+  constructor(props){
+    super(props);
+    this.goto=this.goto.bind(this);
+  }
+  goto(){
+      this.props.nav.push({
+        component:Detail,
+        title:'详细信息',
+        rightButtonTitle:'查看',
+        onRightButtonPress:function(){
+          alert('点击了查看细节！');
+        }
+      })
+  }
   render () {
     return (
       <View style={styles.list_item}>
-        <Text style={styles.list_item_font}>{this.props.title}</Text>
+        <Text style={styles.list_item_font} onPress={this.goto}>{this.props.title}</Text>
       </View>
     )
   }
-})
+}
 
 const styles=StyleSheet.create({
   list_item:{

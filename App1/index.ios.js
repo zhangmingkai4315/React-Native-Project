@@ -13,7 +13,9 @@ import {
   StyleSheet,
   Text,
   View,
-  PixelRatio
+  ScrollView,
+  PixelRatio,
+  NavigatorIOS
 } from 'react-native';
 
 
@@ -22,7 +24,7 @@ import {
 class App1 extends Component {
   render() {
     return (
-      <View style={styles.flex}>
+      <ScrollView style={styles.flex}>
         <View style={styles.container}>
           <View style={[styles.item,styles.center]}>
             <Text style={styles.font}>酒店</Text>
@@ -48,21 +50,21 @@ class App1 extends Component {
 
         <Header></Header>
 
-        <List title="Hello world"></List>
-        <List title="Welcome to react native world"></List>
-        <List title="This is a simple list show "></List>
+        <List title="Hello world" nav={this.props.navigator}></List>
+        <List title="Welcome to react native world" nav={this.props.navigator}></List>
+        <List title="This is a simple list show " nav={this.props.navigator}></List>
         <ImportantNews news={[
             '1. this is a test','2. this is not a test',
             '3. this is a long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long test'
           ]}/>
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container:{
-    marginTop:25,
+    marginTop:80,
     marginLeft:5,
     marginRight:5,
     height:84,
@@ -101,9 +103,26 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
   },
-
-
-
 });
 
-AppRegistry.registerComponent('App1', () => App1);
+
+class NV extends Component{
+  render () {
+    return (
+      <NavigatorIOS
+        style={{flex:1}}
+        initialRoute={{
+          component:App1,
+          title:'首页',
+          passProps:{},
+        }}
+      />
+  );
+  }
+}
+
+
+
+
+
+AppRegistry.registerComponent('App1', () => NV);
