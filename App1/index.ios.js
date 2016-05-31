@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import Header from './src/Header';
 import {
   AppRegistry,
   StyleSheet,
@@ -12,6 +13,9 @@ import {
   View,
   PixelRatio
 } from 'react-native';
+
+
+
 
 class App1 extends Component {
   render() {
@@ -38,6 +42,13 @@ class App1 extends Component {
             </View>
           </View>
         </View>
+
+
+        <Header></Header>
+
+
+
+
       </View>
     );
   }
@@ -83,7 +94,10 @@ const styles = StyleSheet.create({
   center:{
     justifyContent:'center',
     alignItems:'center',
-  }
+  },
+
+
+
 });
 
 AppRegistry.registerComponent('App1', () => App1);
