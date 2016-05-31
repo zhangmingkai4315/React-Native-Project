@@ -6,6 +6,8 @@
 
 import React, { Component } from 'react';
 import Header from './src/Header';
+import List from './src/List';
+import ImportantNews from './src/ImportantNews';
 import {
   AppRegistry,
   StyleSheet,
@@ -46,9 +48,13 @@ class App1 extends Component {
 
         <Header></Header>
 
-
-
-
+        <List title="Hello world"></List>
+        <List title="Welcome to react native world"></List>
+        <List title="This is a simple list show "></List>
+        <ImportantNews news={[
+            '1. this is a test','2. this is not a test',
+            '3. this is a long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long test'
+          ]}/>
       </View>
     );
   }
