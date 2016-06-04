@@ -3,15 +3,20 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView
+  ScrollView,Dimensions,WebView
 } from 'react-native';
-
+const width=Dimensions.get('window').width;
+const height=Dimensions.get('window').height;
 class Detail extends Component {
 
   render () {
     return (
       <ScrollView >
-        <Text>一个详细的页面</Text>
+        <WebView injectedJavascript ="alert('hello')"
+          bounces={true}
+          url='http://baidu.com'
+          style={{width:width,height:height}}
+        ></WebView>
       </ScrollView>
     )
   }

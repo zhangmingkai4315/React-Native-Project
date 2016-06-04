@@ -5,6 +5,7 @@ import {
   View,
   TextInput,
   PixelRatio,
+  TouchableOpacity
 } from 'react-native';
 const onePT=1/PixelRatio.get();
 const Search = React.createClass({
@@ -47,7 +48,7 @@ const Search = React.createClass({
       helperText=<View style={[styles.result]}>{renderHelper}</View>;
    }else{
       helperText=<View></View>
-   }
+   } 
     return (
       <View style={styles.flex}>
       <View style={[styles.container]}>
@@ -61,9 +62,8 @@ const Search = React.createClass({
           />
         </View>
         <View style={styles.btn}>
-            <Text style={styles.search} onPress={this.hide.bind(this,this.state.inputValue)}>搜索</Text>
+            <TouchableOpacity onPress={this.hide.bind(this,this.state.inputValue)}><Text style={styles.search} >搜索</Text></TouchableOpacity>
         </View>
-
       </View>
       {helperText}
       </View>

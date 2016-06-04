@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableHighlight
 } from 'react-native';
 class ImportantNews extends Component{
   constructor(props){
@@ -16,9 +17,11 @@ class ImportantNews extends Component{
     let news=[];
     for (var i in this.props.news){
       var text=(
-        <Text onPress={this.show.bind(this,this.props.news[i])} numberOfLines={2} style={styles.news_item}>
-          {this.props.news[i]}
-        </Text>
+        <TouchableHighlight onPress={this.show.bind(this,this.props.news[i])}
+          underlayColor='#E1F6EF'
+          >
+          <Text>{this.props.news[i]}</Text>
+        </TouchableHighlight>
       );
       news.push(text);
     }
@@ -32,7 +35,7 @@ class ImportantNews extends Component{
 }
 const styles=StyleSheet.create({
   news_title:{
-    fontSize:20,
+    // fontSize:20,
     marginTop:20,
     marginLeft:10,
     marginRight:10,
