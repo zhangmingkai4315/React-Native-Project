@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import NavigatationCustom from './src/Common/NavigatationCustom';
-import Book from './src/Book/BookList';
+import Book from './src/Book/Book';
 import Movie from './src/Movie/Movie';
 import Music from './src/Music/Music';
 import Icon from 'react-native-vector-icons/FontAwesome';

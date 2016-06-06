@@ -14,7 +14,7 @@ export default class Search extends Component{
   render (){
     return (
       <View style={{flex:1}}>
-        <TextInput style={styles.input} {...this.props}/>
+        <TextInput style={sytles.input} {...this.props}/>
       </View>
     )
   }
